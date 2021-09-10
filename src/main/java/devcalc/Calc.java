@@ -28,7 +28,7 @@ public class Calc {
 
         //Pergunta os valores a serem usados no calculo
 
-        if(opcao >= 1 && opcao <= 4){
+        if(opcao >= 1 && opcao <= 4) {
             System.out.print("Entre o 1º numero:");
             nun1 = entrada.nextInt();
             System.out.print("Entre o 2º numero:");
@@ -39,9 +39,27 @@ public class Calc {
 
        // Chama a função do calculo desejado
 
+
        switch (opcao){
            case 1:
                System.out.println(somarDoisNumeros(nun1, nun2));
+               break;
+
+           case 2:
+               System.out.println(subtrairDoisNumeros(nun1, nun2));
+               break;
+
+           case 3:
+               System.out.println(multiplicarDoisNumeros(nun1, nun2));
+               break;
+
+           case 4:
+               if(nun2 ==0){
+                   System.out.println("Não é possivel dividir por zero.");
+               }
+               else{
+                   System.out.println(dividirDoisNumeros(nun1, nun2));
+               }
                break;
 
            default:
@@ -51,6 +69,22 @@ public class Calc {
 
 
     }
+
+    public static int dividirDoisNumeros(int nun1, int nun2){
+        return nun1 / nun2;
+
+    }
+
+    public static int multiplicarDoisNumeros(int nun1, int nun2){
+
+        return nun1 * nun2;
+    }
+
+    public static int subtrairDoisNumeros(int nun1, int nun2){
+
+        return nun1 - nun2;
+    }
+
     public static int somarDoisNumeros(int nun1, int nun2){
 
         return nun1 + nun2;
